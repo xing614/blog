@@ -1,5 +1,8 @@
 <template>
   <div>
+    <router-link to="/uEditorContent">
+      <span>后台</span>
+    </router-link>
     <Header></Header>
     <article>
       <router-view></router-view>

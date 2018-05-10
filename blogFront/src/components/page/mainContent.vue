@@ -1,6 +1,19 @@
 <template>
   <main>
     <div class="main-content">
+
+      <h2 class="ctitle"><b>学习笔记</b> <span>不要轻易放弃。学习成长的路上，我们长路漫漫，只因学无止境。</span></h2>
+      <div class="rnav">
+        <ul>
+          <li><a href="/jstt/bj/">心得笔记</a></li>
+          <li><a href="http://www.ip3q.com/">IP查询</a></li>
+          <li><a href="/jstt/css3/">CSS3|Html5</a></li>
+          <li><a href="/jstt/web/">网站建设</a></li>
+          <li><a href="/news/jsex/">JS经典实例</a></li>
+          <li><a href="/jstt/t/">推荐工具</a></li>
+        </ul>
+      </div>
+
    			<ul class="detail">
   				<li class="blog-detail">
   					<div class="blog-control clearfix">
@@ -109,6 +122,19 @@ export default {
 }
 </script>
 <style scoped>
+/*头部搜索*/
+.rnav { }
+.rnav { margin: 30px auto; overflow: hidden; overflow: hidden; padding-left: 80px }
+.rnav li { width: 120px; text-align: center; display: inline-block; margin-bottom: 5px; margin-right: 5px; float: left; height: 40px; line-height: 38px; background: rgba(255,255,255,0.2) }
+.rnav li a { color: #fff; display: block; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s; border: #fff 1px solid }
+.rnav ul li a:hover { background: #075498; }
+.rnav li:nth-child(1) { background: #FE5187 }
+.rnav li:nth-child(2) { background: #339967 }
+.rnav li:nth-child(3) { background: #FF8151 }
+.rnav li:nth-child(4) { background: #3594cb }
+.rnav li:nth-child(5) { background: #66CC9A }
+.rnav li:nth-child(6) { background: #079798 }
+
 main .main-content .detail .blog-detail .blog-units .blog-unit {
     margin-left: 24px;
     margin-right: 24px;

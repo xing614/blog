@@ -14,18 +14,18 @@
         <span>关于我</span>
         <span class="en">About</span>
       </router-link>
-      <a href="manshenghuo.html">
+      <router-link to="/dailyLife">
         <span>日常碎语</span>
         <span class="en">Life</span>
-      </a>
+      </router-link>
       <router-link to="/studyPage">
         <span>学习笔记</span>
         <span class="en">Learn</span>
       </router-link>
-      <a href="gbook.html">
+      <router-link to="/leaveMsgPage">
         <span>留言</span>
         <span class="en">Saying</span>
-      </a>
+      </router-link>
     </nav>
   </header>
 

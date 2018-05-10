@@ -57,7 +57,7 @@ export default {
 </script>
 <style scoped>
 .aboutme{
-  width:1110px;
+  width:1110px;color:#fff;
 }
 /* banner */
 .banner { height: 180px; text-align: center; overflow: hidden; margin: 30px; line-height: 30px; text-shadow: #fff 1px 1px 1px; background: url(../../assets/images/banner_top.jpg) no-repeat -90px center; color: #333; padding: 40px 0 0 0 }

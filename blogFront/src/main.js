@@ -21,10 +21,20 @@ Vue.prototype.$token = tokenUse
 //vuex ,好像会地总调用文件夹下的index.js
 import store from './store'
 
+//因为axios post有问题，使用qs解决
+import qs from 'qs'
+Vue.prototype.$qs = qs
+
 import $ from 'jquery'
 
 import 'assets/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js'
 import 'assets/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css'
+
+//uedtior编译器的内容
+import '../static/ueditor/ueditor.config.js'
+import '../static/ueditor/ueditor.all.js'
+import '../static/ueditor/lang/zh-cn/zh-cn.js'
+import '../static/ueditor/ueditor.parse.js'
 
 Vue.config.productionTip = false
 

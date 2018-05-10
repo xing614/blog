@@ -9,6 +9,9 @@ import Whole from '@/components/page/whole'
 import IndexPage from '@/components/page/indexPage'
 import StudyPage from '@/components/page/studyPage'
 import AboutMe from '@/components/page/aboutMe'
+import LeaveMsgPage from '@/components/page/leaveMsgPage'
+import DailyLife from '@/components/page/dailyLife'
+import UEditorContent from '@/components/page/uEditorContent'
 
 Vue.use(Router)
 
@@ -37,6 +40,14 @@ export default new Router({
           path: '/aboutMe',
           name: 'AboutMe',
           component: AboutMe
+        },{
+          path: '/leaveMsgPage',
+          name: 'LeaveMsgPage',
+          component: LeaveMsgPage
+        },{
+          path: '/dailyLife',
+          name: 'DailyLife',
+          component: DailyLife
         }
       ]
     },
@@ -55,6 +66,10 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },{
+      path: '/uEditorContent',
+      name: 'UEditorContent',
+      component: UEditorContent
     }
   ]
 })
