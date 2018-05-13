@@ -13,6 +13,7 @@ import LeaveMsgPage from '@/components/page/leaveMsgPage'
 import DailyLife from '@/components/page/dailyLife'
 import UEditorContent from '@/components/page/uEditorContent'
 
+
 Vue.use(Router)
 
 export default new Router({

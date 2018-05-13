@@ -11,8 +11,8 @@
   </div>
 </template>
 <script>
-import Header from '../header.vue'
-import Footer from '../footer.vue'
+import Header from '@/components/header.vue'
+import Footer from '@/components/footer.vue'
 import Personal from '@/components/page/personal.vue'
 import UlContainer from '@/components/page/ulContainer.vue'
 import ListLink from '@/components/page/listLink.vue'

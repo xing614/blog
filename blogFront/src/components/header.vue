@@ -34,13 +34,13 @@
 export default {
   data () {
     return {
-        scrollReveal:scrollReveal()//不写好像也没事？
+        //scrollReveal:scrollReveal()//不写好像也没事？
     }
   },
   created :function() {
   },
   mounted(){
-    window.scrollReveal = new scrollReveal({reset: true});
+    //window.scrollReveal = new scrollReveal({reset: true});
     //this.scrollReveal = new scrollReveal({reset: true});//设置初始scrollreveal.js渲染
   },
   methods:{

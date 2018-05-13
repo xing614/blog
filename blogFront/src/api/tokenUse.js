@@ -5,9 +5,12 @@ export default{
   },
   login(current,info,success,failure){
     const self = this;
-    let data = {'username':info.username,'password':info.password};
+  //  let data = {'username':info.username,'password':info.password};
+  let data = new URLSearchParams();
+  data.append('username', info.username);
+  data.append('password', info.password);
     console.log(data)
-    current.$api.post('/ajaxLogin',data,null,r =>{
+    current.$axiosApi.post('/ajaxLogin',data,null,r =>{
       console.log(r);
       if(r.code!=0 ||r.data.token==null){
         failure(r);

@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <script id="editor" type="text/plain" ></script>
   </div>
 </template>
