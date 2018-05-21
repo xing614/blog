@@ -1,10 +1,14 @@
 package demo.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import demo.dao.IPostsDao;
 import demo.dao.IRoleDao;
 import demo.dao.IUserDao;
+import demo.entity.Posts;
 import demo.entity.Role;
 import demo.entity.User;
 import demo.service.IUserService;
@@ -17,6 +21,9 @@ public class IUserServiceImpl  implements IUserService{
 	
 	@Autowired
 	public IRoleDao	rdao;
+	
+	@Autowired
+	public IPostsDao pdao;
 	
 	@Override
 	public User getUserById(Long id) {
@@ -53,6 +60,19 @@ public class IUserServiceImpl  implements IUserService{
 			return -1;
 		}
 		return udao.insertSelective(record);
+	}
+
+	@Override
+	public int insertPost(Posts post) {
+		// TODO Auto-generated method stub
+		return pdao.insertSelectivePost(post);
+	}
+
+	@Override
+	public List<Posts> getAllPosts() {
+		// TODO Auto-generated method stub
+		return pdao.getAllPosts();
+		
 	}	
 
 }

@@ -5,6 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -15,9 +18,14 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.baidu.ueditor.ActionEnter;
+import com.baidu.ueditor.ConfigManager;
+import com.baidu.ueditor.UEditorConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 //import demo.security.JwtInterceptor;
 
@@ -27,10 +35,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @Configuration
-@EnableWebMvc
-@ComponentScan
+@EnableWebMvc//@EnableWebMvc是使用Java 注解快捷配置Spring Webmvc的一个注解。在使用该注解后配置一个继承于WebMvcConfigurerAdapter的配置类即可配置好Spring Webmvc。
+@ComponentScan//@ComponentScan告诉Spring 哪个packages 的用注解标识的类 会被spring自动扫描并且装入bean容器。
 public class WebConfig extends WebMvcConfigurerAdapter {
 
+    
     //Spring Boot底层通过HttpMessageConverters依靠Jackson库将Java实体类输出为JSON格式。
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {

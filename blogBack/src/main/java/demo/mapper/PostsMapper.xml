@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="demo.dao.IPostsDao" >
+  <resultMap id="BaseResultMap" type="demo.entity.Posts" >
+    <id column="post_id" property="post_id" jdbcType="BIGINT" />
+    <result column="post_author" property="post_author" jdbcType="VARCHAR" />
+    <result column="post_publish_date" property="post_publish_date" jdbcType="TIMESTAMP" />
+    <result column="post_content" property="post_content" jdbcType="VARCHAR" />
+    <result column="post_title" property="post_title" jdbcType="VARCHAR" />
+    <result column="post_excerpt" property="post_excerpt" jdbcType="VARCHAR" />
+    <result column="post_status" property="post_status" jdbcType="INTEGER" />
+    <result column="post_name" property="post_name" jdbcType="VARCHAR" />
+    <result column="post_picture" property="post_picture" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    post_id,post_author,post_publish_date,post_content,post_title,post_excerpt,post_status,post_name,post_picture
+  </sql>
+  <select id="getAllPosts" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from u_posts
+  </select>
+  
+  <insert id="insertSelectivePost" parameterType="demo.entity.Posts" >
+    insert into u_posts
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="post_id != null" >
+        post_id,
+      </if>
+      <if test="post_author != null" >
+        post_author,
+      </if>
+      <if test="post_publish_date != null" >
+        post_publish_date,
+      </if>
+      <if test="post_content != null" >
+        post_content,
+      </if>
+      <if test="post_title != null" >
+        post_title,
+      </if>
+      <if test="post_excerpt != null" >
+        post_excerpt,
+      </if>
+      <if test="post_status != null" >
+        post_status,
+      </if>
+      <if test="post_name != null" >
+        post_name,
+      </if>
+      <if test="post_picture != null" >
+        post_picture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="post_id != null" >
+        #{post_id,jdbcType=BIGINT},
+      </if>
+      <if test="post_author != null" >
+        #{post_author,jdbcType=VARCHAR},
+      </if>
+      <if test="post_publish_date != null" >
+        #{post_publish_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="post_content != null" >
+        #{post_content,jdbcType=VARCHAR},
+      </if>
+      <if test="post_title != null" >
+        #{post_title,jdbcType=VARCHAR},
+      </if>
+      <if test="post_excerpt != null" >
+        #{post_excerpt,jdbcType=VARCHAR},
+      </if>
+      <if test="post_status != null" >
+        #{post_status,jdbcType=INTEGER},
+      </if>
+      <if test="post_name != null" >
+        #{post_name,jdbcType=VARCHAR},
+      </if>
+      <if test="post_picture != null" >
+        #{post_picture,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertpost" parameterType="demo.entity.Posts">
+  insert into u_posts (post_id,post_content,post_title) values  (#{post_id,jdbcType=BIGINT},#{post_content,jdbcType=VARCHAR}, #{post_title,jdbcType=VARCHAR})
+  </insert>
+</mapper>

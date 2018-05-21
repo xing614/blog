@@ -7,8 +7,13 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
-
+/**
+ * shiro表单认证
+ * @author liang
+ *
+ */
 public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
+	//true就是拒绝
     @Override  
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {  
     	System.out.println("------------MyFormAuthenticationFilter---------------");

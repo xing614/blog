@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import demo.util.ueditor.ActionEnter;
+import com.baidu.ueditor.ActionEnter;
 
 /**
  * 用来处理ueditor
@@ -35,6 +36,9 @@ public class UeditorController {
 //       return new ActionEnter( request, rootPath).exec();
 //   }
   
+   @Autowired
+   private ActionEnter actionEnter;
+	
    @RequestMapping(value = "/ueditor/exec")
    @ResponseBody
    public String exec(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException, JSONException{ 
@@ -43,7 +47,8 @@ public class UeditorController {
 	   request.setCharacterEncoding("utf-8");
        String rootPath = request.getRealPath("/");
        System.out.println(rootPath);
-       return new ActionEnter(request, rootPath).exec(); 
+       //return new ActionEnter(request, rootPath).exec(); 
+       return actionEnter.exec(request);
    }
    
    @RequestMapping(value = "/sendArticle")

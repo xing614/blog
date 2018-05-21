@@ -2,6 +2,9 @@ package demo.service;
 
 
 
+import java.util.List;
+
+import demo.entity.Posts;
 import demo.entity.Role;
 import demo.entity.User;
 
@@ -18,5 +21,9 @@ public interface IUserService {
 	public int updateByPrimaryKeySelective(User record);
 	
 	public int insertUser(User record);
+	
+	public int insertPost(Posts post);
+	
+	public List<Posts> getAllPosts();
 
 }

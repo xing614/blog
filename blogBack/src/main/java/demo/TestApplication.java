@@ -38,7 +38,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 //@EnableAutoConfiguration   //自动加载配置信息  
 @EnableCaching//启动缓存
 @RestController  
-@SpringBootApplication //用了这个其他RestController能读取，该注解指定项目为springboot，由此类当作程序入口，自动装配 web 依赖的环境
+@SpringBootApplication //用了这个其他RestController能读取，该注解指定项目为springboot，由此类当作程序入口，自动装配 web 依赖的环境。@SpringBootApplication注解中已经包含了@ComponentScan和@EnableConfigurationProperties注解
 public class TestApplication implements CommandLineRunner{  
 	
 	@Autowired  
